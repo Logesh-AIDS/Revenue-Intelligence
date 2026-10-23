@@ -1,4 +1,4 @@
-# Revenue Intelligence Inbox
+# RevMaker
 
 A workspace that helps a sales manager review calls and meetings, understand activity, route conversations to the right analysis, and decide what needs attention. Built for the SpendNest Revenue Intelligence Inbox assignment.
 

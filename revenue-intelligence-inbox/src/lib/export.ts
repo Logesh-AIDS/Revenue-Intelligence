@@ -230,7 +230,7 @@ function generateExportReadme(records: StoredRecord[]): string {
   const textCount = records.filter((r) => hasUsableText(r)).length;
   const routes = new Set(records.map((r) => effectiveRoute(r)));
 
-  return `# Revenue Intelligence Inbox — Export
+  return `# RevMaker — Export
 
 Generated: ${new Date().toISOString()}
 

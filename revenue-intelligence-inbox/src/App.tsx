@@ -154,8 +154,8 @@ export default function App() {
       {/* Mobile top bar */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-30 bg-slate-900 text-white px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-xs font-bold">RI</div>
-          <span className="font-semibold text-sm">Revenue Intelligence</span>
+          <div className="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-xs font-bold">RM</div>
+          <span className="font-semibold text-sm">RevMaker</span>
         </div>
         <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-xl">☰</button>
       </div>
@@ -170,11 +170,11 @@ export default function App() {
         <div className="px-5 py-5 border-b border-slate-700 hidden md:block">
           <div className="flex items-center gap-2">
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold text-sm shadow-lg">
-              RI
+              RM
             </div>
             <div>
-              <div className="text-white font-semibold text-sm leading-tight">Revenue Intelligence</div>
-              <div className="text-slate-400 text-xs">Inbox · SpendNest</div>
+              <div className="text-white font-semibold text-sm leading-tight">RevMaker</div>
+              <div className="text-slate-400 text-xs">Revenue Intelligence · SpendNest</div>
             </div>
           </div>
         </div>

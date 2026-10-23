@@ -1,5 +1,5 @@
 // ============================================================================
-// Core type definitions for the Revenue Intelligence Inbox
+// Core type definitions for RevMaker
 // ============================================================================
 
 /** A source delivery batch (the JSON envelope) */

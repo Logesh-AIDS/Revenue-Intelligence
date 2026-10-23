@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenue Intelligence Inbox — Slides</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #e2e8f0; }
+  .slide {
+    width: 1280px; min-height: 720px; margin: 20px auto; padding: 50px 60px;
+    background: #f8fafc; color: #1e293b; border-radius: 16px;
+    display: flex; flex-direction: column; position: relative; overflow: hidden;
+    page-break-after: always;
+  }
+  .slide-num { position: absolute; bottom: 20px; right: 30px; font-size: 14px; color: #94a3b8; }
+  .slide-tag { position: absolute; top: 20px; right: 30px; font-size: 12px; color: #2563eb; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; color: #1e293b; }
+  h2 { font-size: 22px; font-weight: 600; margin-bottom: 16px; color: #475569; }
+  h3 { font-size: 18px; font-weight: 600; margin: 12px 0 8px; color: #1e293b; }
+  p { font-size: 16px; line-height: 1.6; color: #475569; margin-bottom: 10px; }
+  .accent-bar { width: 60px; height: 4px; background: #2563eb; border-radius: 2px; margin-bottom: 20px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; }
+  .card-accent { border-left: 4px solid #2563eb; }
+  .finding { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; border-left: 4px solid; margin-bottom: 12px; }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+  .badge-blue { background: #dbeafe; color: #2563eb; }
+  .badge-green { background: #d1fae5; color: #059669; }
+  .badge-amber { background: #fef3c7; color: #d97706; }
+  .badge-red { background: #fee2e2; color: #dc2626; }
+  .badge-purple { background: #f3e8ff; color: #7c3aed; }
+  .route-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .route-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: #f1f5f9; border-radius: 8px; font-size: 14px; }
+  .route-color { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 4px 0 4px 20px; position: relative; font-size: 15px; color: #475569; }
+  ul li::before { content: "→"; position: absolute; left: 0; color: #2563eb; font-weight: 600; }
+  .quote { font-style: italic; color: #64748b; border-left: 3px solid #cbd5e1; padding-left: 12px; margin: 8px 0; font-size: 14px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 42px; font-weight: 800; color: #2563eb; }
+  .stat-label { font-size: 13px; color: #64748b; margin-top: 4px; }
+  .highlight { background: #fef3c7; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+  .folder-tree { font-family: 'Courier New', monospace; font-size: 13px; background: #1e293b; color: #cbd5e1; padding: 16px 20px; border-radius: 8px; line-height: 1.8; }
+  .footer-note { font-size: 12px; color: #94a3b8; margin-top: 16px; padding-top: 12px; border-top: 1px solid #e2e8f0; }
+  @media print { body { background: white; } .slide { margin: 0; border-radius: 0; } }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Manager problem + main findings -->
+<div class="slide">
+  <div class="slide-tag">Slide 1 of 5</div>
+  <h1>The manager problem & main findings</h1>
+  <div class="accent-bar"></div>
+  <p style="font-size: 18px; margin-bottom: 20px;">A sales manager receives 44 source records (30 calls, 14 meetings) from multiple systems. Only 18 have usable text. Stored labels don't always match what was said. The product turns this into a daily workspace: understand what happened, find what needs attention, decide what to do next.</p>
+
+  <div class="grid-3" style="margin-bottom: 20px;">
+    <div class="card stat"><div class="stat-num">44</div><div class="stat-label">Selected records<br>(30 calls · 14 meetings)</div></div>
+    <div class="card stat"><div class="stat-num">18</div><div class="stat-label">With usable text<br>(40.9% coverage)</div></div>
+    <div class="card stat"><div class="stat-num">7</div><div class="stat-label">Routing categories<br>+ intake queue</div></div>
+  </div>
+
+  <h3 style="color: #2563eb;">Three most important findings</h3>
+
+  <div class="finding" style="border-color: #dc2626;">
+    <span class="badge badge-red">Finding 1 · High priority</span>
+    <h3>M03 — Price transparency eroded trust in an active deal</h3>
+    <p>The Asterloom customer caught a price increase from INR 26k to 39k (bundled setup undisclosed).</p>
+    <div class="quote">M03, Turn 23: "But you previously told me INR 26,000. Why has that become INR 39,000?"</div>
+    <p style="font-size: 13px; color: #2563eb;">→ Product impact: Record Detail for M03 → Analysis evidence + Manager Brief → high priority</p>
+  </div>
+
+  <div class="finding" style="border-color: #f59e0b;">
+    <span class="badge badge-amber">Finding 2 · Late transcript</span>
+    <h3>M07 — Urgent production bug hidden until the update batch</h3>
+    <p>M07 had no text initially. After the update, 27 turns revealed payments stuck in "Processing."</p>
+    <div class="quote">M07, Turn 19: "The payments appear to have been released but are stuck showing Processing."</div>
+    <p style="font-size: 13px; color: #2563eb;">→ Product impact: Import Panel → M07 tracking + Record Detail analysis + Brief high priority</p>
+  </div>
+
+  <div class="finding" style="border-color: #2563eb;">
+    <span class="badge badge-blue">Finding 3 · Compliance constraint</span>
+    <h3>C09 — Referral with a hard anonymity constraint</h3>
+    <p>Vedant pointed to business head Mr Rishabh but said "No, please don't use my name." Must flag in CRM.</p>
+    <div class="quote">C09: "Would it be all right if I mentioned your name? — No, please don't use my name."</div>
+    <p style="font-size: 13px; color: #2563eb;">→ Product impact: C09 Record Detail → Next steps + Brief → follow-up actions</p>
+  </div>
+  <div class="slide-num">1</div>
+</div>
+
+<!-- Slide 2: Interface choices + what I left out -->
+<div class="slide">
+  <div class="slide-tag">Slide 2 of 5</div>
+  <h1>Interface choices & deliberate omissions</h1>
+  <div class="accent-bar"></div>
+
+  <div class="grid-2">
+    <div>
+      <h3 style="color: #2563eb;">What I built</h3>
+      <ul>
+        <li><strong>Dashboard</strong> with defined-denominator metrics, person/source-type filters, and drill-down to records</li>
+        <li><strong>Conversation list</strong> with route badges, text coverage, and review state</li>
+        <li><strong>Record detail</strong> with transcript, evidence-linked analysis, and route correction</li>
+        <li><strong>Import/replay panel</strong> with step-by-step replay and M07 tracking</li>
+        <li><strong>Manager brief</strong> for 21 Aug 2026 with evidence-linked priorities</li>
+        <li><strong>Export</strong> with organised folders and JSON+CSV manifest</li>
+        <li><strong>Metrics & definitions</strong> panel making every number auditable</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color: #dc2626;">What I deliberately left out</h3>
+      <ul>
+        <li><strong>No pipeline value totals</strong> — no authoritative deal-value table exists; inventing one would mislead</li>
+        <li><strong>No cross-person performance rankings</strong> — the sample is selected, not representative</li>
+        <li><strong>No account matching</strong> — no verified company-ID join; similar titles aren't identity</li>
+        <li><strong>No speaker talk ratios</strong> — phone text has no trustworthy turn timing; meeting speakers are local labels</li>
+        <li><strong>No live AI</strong> — pre-generated analysis is honest about what's computed vs. prepared</li>
+        <li><strong>No generic summaries</strong> — each of 18 conversations gets differentiated analysis</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Design principle: every headline number has a defined denominator, a stated period, and a note on whether missing information affects it. The manager can drill from any number to the supporting source record.
+  </div>
+  <div class="slide-num">2</div>
+</div>
+
+<!-- Slide 3: Routing/folder design + difficult case -->
+<div class="slide">
+  <div class="slide-tag">Slide 3 of 5</div>
+  <h1>Routing/folder design & one difficult case</h1>
+  <div class="accent-bar"></div>
+
+  <div class="grid-2">
+    <div>
+      <h3 style="color: #2563eb;">7 routing categories</h3>
+      <div class="route-grid">
+        <div class="route-item"><div class="route-color" style="background:#f59e0b"></div>🎯 Sales Coaching <span style="color:#94a3b8">(5)</span></div>
+        <div class="route-item"><div class="route-color" style="background:#3b82f6"></div>💼 Deal Follow-up <span style="color:#94a3b8">(7)</span></div>
+        <div class="route-item"><div class="route-color" style="background:#10b981"></div>🤝 Customer Success <span style="color:#94a3b8">(3)</span></div>
+        <div class="route-item"><div class="route-color" style="background:#8b5cf6"></div>🔗 Partnership <span style="color:#94a3b8">(2)</span></div>
+        <div class="route-item"><div class="route-color" style="background:#ec4899"></div>🔍 Vendor Eval <span style="color:#94a3b8">(1)</span></div>
+        <div class="route-item"><div class="route-color" style="background:#64748b"></div>📋 Internal <span style="color:#94a3b8">(1)</span></div>
+        <div class="route-item"><div class="route-color" style="background:#94a3b8"></div>📥 Intake Required <span style="color:#94a3b8">(26)</span></div>
+      </div>
+      <p style="font-size: 13px; margin-top: 12px;">Manual overrides take precedence. The manager can change any route; corrections persist across updates and refreshes.</p>
+    </div>
+    <div>
+      <h3 style="color: #2563eb;">Folder structure</h3>
+      <div class="folder-tree">exports/
+  sales-coaching/      5 files
+  deal-followup/       7 files
+  customer-success/    3 files
+  partnership/         2 files
+  vendor-evaluation/   1 file
+  internal/            1 file
+  intake-required/    26 files
+  manager-brief.md
+manifest.json + .csv</div>
+      <p style="font-size: 13px; margin-top: 8px;">Each record's analysis file lives in its route folder. If a route changes, the old file is superseded by the new one.</p>
+    </div>
+  </div>
+
+  <h3 style="color: #2563eb; margin-top: 24px;">Difficult routing case: M07 (Willowfield Trust)</h3>
+  <div class="card card-accent">
+    <p><strong>Initial state:</strong> No transcript (withheld for the update test) → routed to <span class="badge badge-blue">Intake Required</span>. No fabricated analysis.</p>
+    <p><strong>After update:</strong> 27 turns reveal a customer support session with 4 bugs — one urgent (payments stuck in Processing).</p>
+    <p><strong>Decision:</strong> Route to <span class="badge badge-green">Customer Success</span> with analysis citing Turn 19 as the urgent evidence. If the manager manually set a route before the update, the manual route is preserved — the suggested route updates, but the override wins.</p>
+    <p style="font-size: 13px; color: #64748b;">The difficulty: the conversation serves a single purpose (bug triage) but spans four issues with different urgencies. I chose one route (CS) with the analysis differentiating urgency internally, rather than splitting into four outputs. This keeps the export structure simple while the analysis communicates the priority hierarchy.</p>
+  </div>
+  <div class="slide-num">3</div>
+</div>
+
+<!-- Slide 4: How I checked a key number + key analytical conclusion -->
+<div class="slide">
+  <div class="slide-tag">Slide 4 of 5</div>
+  <h1>How I verified a key number & a key conclusion</h1>
+  <div class="accent-bar"></div>
+
+  <div class="grid-2">
+    <div>
+      <h3 style="color: #2563eb;">Checking a key number: 44 unique records</h3>
+      <div class="card card-accent">
+        <p><strong>Claim:</strong> 44 distinct (source_type, source_id) after applying revisions, not 45 (initial 44 + update 1).</p>
+        <p><strong>How I checked:</strong></p>
+        <ul>
+          <li>Initial batch has 44 records, all revision 1 → 44 stored</li>
+          <li>Update batch has 1 record (M07), revision 2 → M07 is an existing key, so it replaces, not adds</li>
+          <li>Re-importing initial (revision 1) after update → M07's applied rev is 2, incoming is 1 → ignored as older</li>
+          <li>Result: <span class="highlight">44 → 44 → 44</span> across all replay steps</li>
+        </ul>
+        <p style="font-size: 13px; color: #64748b;">Verified with a Node script replicating the import logic. The app shows this in the Import panel's record-count card and import log.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="color: #2563eb;">Checking a key conclusion: M03 price transparency</h3>
+      <div class="card card-accent">
+        <p><strong>Claim:</strong> The rep conflated a recurring subscription (INR 26k) with a bundled setup charge (INR 13k), causing the customer to question the price increase.</p>
+        <p><strong>How I traced it:</strong></p>
+        <ul>
+          <li>Turn 23: "But you previously told me INR 26,000. Why has that become INR 39,000?"</li>
+          <li>Turn 24: "I included the integration setup in that number. INR 26,000 is the recurring subscription, and INR 13,000 is the one-time setup."</li>
+          <li>Cross-check: 26,000 + 13,000 = 39,000 ✓ — the rep had quoted a bundled number without disclosing the split</li>
+          <li>Impact: next steps say "send itemised price breakdown — no bundled numbers"</li>
+        </ul>
+        <p style="font-size: 13px; color: #64748b;">The evidence is citeable by turn number in the app, and the analysis links both turns as supporting evidence with a "jump to turn" button.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Every metric in the dashboard links to its definition in the Metrics & Definitions panel. Every evidence item in the analysis links to the transcript passage. The manager can verify any number or conclusion by drilling from the overview to the source.
+  </div>
+  <div class="slide-num">4</div>
+</div>
+
+<!-- Slide 5: Trade-offs, AI usage, limitations -->
+<div class="slide">
+  <div class="slide-tag">Slide 5 of 5</div>
+  <h1>Trade-offs, AI usage & limitations</h1>
+  <div class="accent-bar"></div>
+
+  <div class="grid-2">
+    <div>
+      <h3 style="color: #2563eb;">AI usage</h3>
+      <div class="card card-accent">
+        <ul>
+          <li><strong>Pre-generated analysis</strong> for all 18 text conversations — prepared by reading each transcript</li>
+          <li>Differentiated: no generic summaries; each analysis cites specific evidence</li>
+          <li>Manager brief pre-generated for 21 Aug 2026</li>
+          <li>Routing, metrics, import/dedup, export generation computed at <strong>runtime</strong></li>
+          <li>No live AI calls; no API keys in the submission</li>
+        </ul>
+      </div>
+
+      <h3 style="color: #2563eb; margin-top: 16px;">Rejected decision</h3>
+      <div class="card" style="border-left: 4px solid #dc2626;">
+        <p><strong>Considered:</strong> Runtime LLM analysis for each conversation.</p>
+        <p><strong>Rejected because:</strong> API keys can't be in the submission; pre-generated analysis is explicitly allowed; runtime analysis would make the replay test non-deterministic.</p>
+        <p><strong>Trade-off:</strong> When source text changes, the app shows a freshness indicator and marks review state — rather than silently regenerating. This is honest about limitations. The resulting choice: the <code>analysis_fresh</code> field in the manifest and the freshness indicator in Record Detail.</p>
+      </div>
+    </div>
+    <div>
+      <h3 style="color: #2563eb;">Known limitations</h3>
+      <div class="card card-accent">
+        <ul>
+          <li>No CRM opportunity table or authoritative deal value — opportunity signals come from conversation evidence only</li>
+          <li>No cross-meeting speaker directory — speaker labels are local to each meeting</li>
+          <li>No talk ratios for calls — phone text has no trustworthy turn timing</li>
+          <li>localStorage persistence (~5MB) — sufficient for 44 records, not for scale</li>
+          <li>Pre-generated analysis covers 18 conversations; new text at runtime would route to intake</li>
+          <li>The data is de-identified and adapted — not a verbatim export</li>
+        </ul>
+      </div>
+
+      <h3 style="color: #2563eb; margin-top: 16px;">What I'd improve next</h3>
+      <div class="card" style="border-left: 4px solid #10b981;">
+        <ul>
+          <li>Server-side persistence (PostgreSQL) instead of localStorage</li>
+          <li>Optional LLM analysis with the user's own API key (clearly labelled)</li>
+          <li>Multi-route support (a conversation producing outputs for multiple destinations)</li>
+          <li>Full-text search across transcripts and analysis</li>
+          <li>Trend views across multiple days (the sample is a single date)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    Approximate time spent: 7 hours. Built with React + TypeScript + Vite + Tailwind. All source files included. Export files generated from the app's Export panel.
+  </div>
+  <div class="slide-num">5</div>
+</div>
+
+</body>
+</html>
